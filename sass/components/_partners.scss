@@ -1,0 +1,59 @@
+.partners {
+
+    &__title {
+        @extend %title-font;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -30px;
+        margin-bottom: -30px;
+    }
+
+    @media screen and (max-width: 767px) {
+        &__item {
+            margin-bottom: 30px;
+            margin-left: 30px;
+            @include flex-formula(2);
+        }
+    }
+    
+
+    @media screen and (min-width: 768px) and (max-width:1199px) {
+        &__item {
+            margin-bottom: 30px;
+            margin-left: 30px;
+            @include flex-formula(3);
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        &__item {
+            margin-bottom: 30px;
+            margin-left: 30px;
+            @include flex-formula(6);
+        }
+    }
+
+    &__link  {
+        padding: 16px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid getColor('partners-color');
+        border-radius: 4px;
+        color: getColor('partners-color');
+        @include animation2(color, border-color);
+    }
+
+    &__link:hover,
+    &__link:focus {
+        color: getColor('hover-color');
+        border-color: getColor('hover-color');
+    }
+
+    &__icon {
+        fill: currentColor;
+    }
+}
